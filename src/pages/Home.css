@@ -211,11 +211,13 @@
 .hero-cta:hover::before { left: 100%; }
 
 .scroll-indicator {
-  position: absolute; bottom: 40px; left: 50%;
-  transform: translateX(-50%);
+  position: absolute; bottom: 40px;
+  left: 0; right: 0;
+  margin: 0 auto; width: fit-content;
   font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
   color: rgba(var(--cream-rgb), 0.2);
   display: flex; flex-direction: column; align-items: center; gap: 14px;
+  padding-left: 4px;
   opacity: 0;
   animation: heroIn 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
 }
