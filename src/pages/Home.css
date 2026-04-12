@@ -137,6 +137,17 @@
   text-align: center;
   padding: 140px 40px 100px;
   position: relative; overflow: hidden;
+  background-image: url('/images/olive-grove-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(26,26,26,0.75);
+  z-index: 1;
 }
 .hero::before {
   content: '';
@@ -146,8 +157,9 @@
     radial-gradient(ellipse at 20% 20%, rgba(var(--gold-rgb), 0.03) 0%, transparent 40%),
     radial-gradient(ellipse at 80% 30%, rgba(45,58,45,0.06) 0%, transparent 40%);
   pointer-events: none;
+  z-index: 2;
 }
-.hero-content { position: relative; z-index: 2; }
+.hero-content { position: relative; z-index: 3; }
 .hero-badge {
   display: inline-block;
   font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
@@ -220,6 +232,7 @@
   padding-left: 4px;
   opacity: 0;
   animation: heroIn 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
+  z-index: 3;
 }
 .scroll-line {
   width: 1px; height: 44px;
@@ -344,6 +357,21 @@
   padding: 130px 60px;
   max-width: 860px; margin: 0 auto;
   text-align: center; position: relative;
+  background-image: url('/images/olive-tree.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.story::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(26,26,26,0.88);
+  z-index: 1;
+  pointer-events: none;
+}
+.story > * {
+  position: relative;
+  z-index: 2;
 }
 .story h2 {
   font-family: 'Cormorant Garamond', serif;
@@ -687,7 +715,7 @@
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
-  .hero { padding: 120px 28px 80px; }
+  .hero { padding: 120px 28px 80px; background-attachment: scroll; }
   .hero-branch { display: none; }
 
   .story, .features, .product-section, .waitlist, .heritage { padding: 90px 28px; }
