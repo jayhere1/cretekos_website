@@ -19,7 +19,7 @@
 .h-hero .hero-sub-deva { color: var(--saffron-deep); font-size: 18px; max-width: 520px; line-height: 1.55; margin-bottom: 40px; }
 .h-hero-ctas { display: flex; gap: 14px; }
 .h-hero-visual {
-  position: relative; aspect-ratio: 1 / 1.1;
+  position: relative; aspect-ratio: 1 / 1.1; width: 100%; min-height: 400px;
 }
 .h-hero-img-main {
   position: absolute; inset: 0;
@@ -197,7 +197,7 @@
   border-top: 1px solid var(--hairline);
 }
 .h-prod-inner { max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
-.h-prod-visual { position: relative; aspect-ratio: 3/4; max-width: 420px; }
+.h-prod-visual { position: relative; aspect-ratio: 3/4; width: 100%; max-width: 420px; }
 .h-prod-card {
   position: relative;
   aspect-ratio: 3/4;

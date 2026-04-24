@@ -7,7 +7,7 @@
 .g-split h2 em { font-style: italic; font-weight: 400; color: var(--greek-blue); }
 .g-split p { font-size: 16px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 14px; max-width: 54ch; }
 .g-vis {
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/5; width: 100%; min-height: 400px;
   background-size: cover; background-position: center;
   border-radius: 280px 280px 16px 16px;
   position: relative;

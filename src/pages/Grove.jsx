@@ -2,28 +2,89 @@ import './Grove.css'
 
 function GroveMapSVG() {
   return (
-    <svg viewBox="0 0 600 430" style={{ width: '100%', height: '100%' }}>
-      <rect width="600" height="430" fill="var(--cream)"/>
-      <path d="M0,0 L600,0 L600,240 Q450,260 300,220 Q150,200 0,240 Z" fill="rgba(31,90,138,0.08)"/>
-      <path d="M0,240 Q150,200 300,220 Q450,260 600,240" fill="none" stroke="var(--greek-blue)" strokeWidth="1" strokeDasharray="3 3"/>
-      {[...Array(30)].map((_, i) => (
-        <circle key={i} cx={(i % 10) * 60 + 30} cy={Math.floor(i / 10) * 60 + 300} r="1" fill="var(--hairline-strong)"/>
+    <svg viewBox="0 0 700 440" style={{ width: '100%', height: '100%' }}>
+      <defs>
+        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="var(--greek-blue)" stopOpacity="0.06"/>
+          <stop offset="100%" stopColor="var(--greek-blue)" stopOpacity="0.02"/>
+        </linearGradient>
+        <linearGradient id="land" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="var(--saffron)" stopOpacity="0.06"/>
+          <stop offset="100%" stopColor="var(--cream-dark)" stopOpacity="0.3"/>
+        </linearGradient>
+      </defs>
+
+      {/* Background */}
+      <rect width="700" height="440" fill="var(--cream)" rx="16"/>
+
+      {/* Sea area */}
+      <path d="M0,0 L700,0 L700,220 Q550,250 350,210 Q150,180 0,230 Z" fill="url(#sea)"/>
+
+      {/* Subtle latitude lines */}
+      {[140, 180, 220, 260, 300, 340].map((y, i) => (
+        <line key={i} x1="30" y1={y} x2="670" y2={y} stroke="var(--hairline)" strokeWidth="0.5" strokeDasharray="2 6"/>
       ))}
-      <g transform="translate(180, 130)">
-        <circle r="12" fill="var(--saffron)" opacity="0.25"/>
-        <circle r="6" fill="var(--saffron)"/>
-        <text x="18" y="-4" fontFamily="Spectral, serif" fontStyle="italic" fontSize="18" fill="var(--ink)">Chania</text>
-        <text x="18" y="14" fontFamily="GFS Neohellenic, serif" fontSize="13" fill="var(--greek-blue)">Χανιά · Crete</text>
+      {/* Subtle longitude lines */}
+      {[100, 200, 300, 400, 500, 600].map((x, i) => (
+        <line key={i} x1={x} y1="60" x2={x} y2="400" stroke="var(--hairline)" strokeWidth="0.5" strokeDasharray="2 6"/>
+      ))}
+
+      {/* Simplified landmasses */}
+      {/* Greece/Crete */}
+      <path d="M100,160 Q120,140 150,145 Q170,135 185,150 Q195,155 180,170 Q170,180 150,175 Q130,178 110,172 Z" fill="url(#land)" stroke="var(--hairline-strong)" strokeWidth="0.5"/>
+      {/* Crete island */}
+      <path d="M120,200 Q140,192 170,194 Q200,190 220,195 Q235,198 230,205 Q215,212 190,210 Q160,212 130,208 Z" fill="url(#land)" stroke="var(--hairline-strong)" strokeWidth="0.5"/>
+      {/* Turkey */}
+      <path d="M220,130 Q260,120 300,125 Q320,135 310,155 Q290,170 260,165 Q240,155 230,145 Z" fill="url(#land)" stroke="var(--hairline)" strokeWidth="0.5" opacity="0.5"/>
+      {/* India */}
+      <path d="M520,240 Q540,230 570,235 Q600,250 610,290 Q605,330 580,360 Q560,375 545,370 Q530,350 525,320 Q515,280 520,240 Z" fill="url(#land)" stroke="var(--hairline-strong)" strokeWidth="0.5"/>
+
+      {/* Sea label */}
+      <text x="350" y="170" textAnchor="middle" fontFamily="Spectral, serif" fontSize="10" letterSpacing="4" fill="var(--greek-blue)" opacity="0.35" fontStyle="italic">MEDITERRANEAN SEA</text>
+      <text x="480" y="290" textAnchor="middle" fontFamily="Spectral, serif" fontSize="9" letterSpacing="3" fill="var(--greek-blue)" opacity="0.3" fontStyle="italic">ARABIAN SEA</text>
+
+      {/* Shipping route — curved through Suez */}
+      <path d="M175,200 Q260,210 310,220 Q380,240 430,270 Q480,290 540,310"
+        fill="none" stroke="var(--saffron)" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.7"/>
+
+      {/* Route waypoints */}
+      <circle cx="310" cy="220" r="2.5" fill="var(--saffron)" opacity="0.4"/>
+      <text x="310" y="238" textAnchor="middle" fontFamily="Spectral, serif" fontSize="8" fill="var(--muted)" fontStyle="italic">Suez</text>
+
+      {/* Chania marker */}
+      <g transform="translate(175, 200)">
+        <circle r="16" fill="var(--saffron)" opacity="0.12"/>
+        <circle r="10" fill="var(--saffron)" opacity="0.2"/>
+        <circle r="5" fill="var(--saffron)"/>
+        <text x="-50" y="-18" fontFamily="Spectral, serif" fontStyle="italic" fontSize="18" fill="var(--ink)" fontWeight="400">Chania</text>
+        <text x="-50" y="-2" fontFamily="GFS Neohellenic, serif" fontSize="11" fill="var(--greek-blue)">Χανιά, Κρήτη</text>
       </g>
-      <path d="M180,130 Q340,180 470,300" fill="none" stroke="var(--saffron)" strokeWidth="1.5" strokeDasharray="5 4"/>
-      <g transform="translate(470, 300)">
-        <circle r="12" fill="var(--greek-blue)" opacity="0.25"/>
-        <circle r="6" fill="var(--greek-blue)"/>
-        <text x="18" y="-4" fontFamily="Spectral, serif" fontStyle="italic" fontSize="18" fill="var(--ink)">Mumbai</text>
-        <text x="18" y="14" fontFamily="Tiro Devanagari Sanskrit, serif" fontSize="13" fill="var(--saffron-deep)">मुंबई · India</text>
+
+      {/* Mumbai marker */}
+      <g transform="translate(545, 315)">
+        <circle r="16" fill="var(--greek-blue)" opacity="0.12"/>
+        <circle r="10" fill="var(--greek-blue)" opacity="0.2"/>
+        <circle r="5" fill="var(--greek-blue)"/>
+        <text x="16" y="-10" fontFamily="Spectral, serif" fontStyle="italic" fontSize="18" fill="var(--ink)" fontWeight="400">Mumbai</text>
+        <text x="16" y="6" fontFamily="Tiro Devanagari Sanskrit, serif" fontSize="11" fill="var(--saffron-deep)">मुंबई, भारत</text>
       </g>
-      <text x="325" y="200" fontFamily="Spectral, serif" fontSize="12" fontStyle="italic" fill="var(--muted)">~ 4,100 miles</text>
-      <text x="325" y="218" fontFamily="Spectral, serif" fontSize="10" letterSpacing="2" fill="var(--muted)">21 DAYS BY SEA</text>
+
+      {/* Distance label on route */}
+      <g transform="translate(400, 248)">
+        <rect x="-52" y="-12" width="104" height="28" rx="14" fill="var(--cream)" stroke="var(--hairline-strong)" strokeWidth="0.5"/>
+        <text x="0" y="0" textAnchor="middle" fontFamily="Spectral, serif" fontSize="11" fill="var(--ink)" fontStyle="italic">~ 4,100 miles</text>
+        <text x="0" y="12" textAnchor="middle" fontFamily="Spectral, serif" fontSize="8" letterSpacing="2" fill="var(--muted)">21 DAYS BY SEA</text>
+      </g>
+
+      {/* Double-rule frame */}
+      <rect x="8" y="8" width="684" height="424" rx="12" fill="none" stroke="var(--hairline-strong)" strokeWidth="0.5"/>
+      <rect x="14" y="14" width="672" height="412" rx="10" fill="none" stroke="var(--hairline)" strokeWidth="0.5"/>
+
+      {/* Corner labels */}
+      <text x="30" y="34" fontFamily="Spectral, serif" fontSize="9" letterSpacing="2" fill="var(--muted)">THE PASSAGE</text>
+      <text x="670" y="34" textAnchor="end" fontFamily="Spectral, serif" fontSize="9" letterSpacing="2" fill="var(--muted)">CRETE → INDIA</text>
+      <text x="30" y="426" fontFamily="Spectral, serif" fontSize="8" fill="var(--muted)" fontStyle="italic">Reefer container · 15–18°C</text>
+      <text x="670" y="426" textAnchor="end" fontFamily="Spectral, serif" fontSize="8" fill="var(--muted)" fontStyle="italic">Piraeus → Suez → Nhava Sheva</text>
     </svg>
   )
 }
