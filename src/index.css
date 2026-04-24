@@ -27,6 +27,18 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* GPU-accelerate sticky elements to prevent scroll jank */
+.du-nav, .du-announce {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Smooth image rendering */
+img, [style*="background-image"] {
+  image-rendering: auto;
 }
 
 a { color: inherit; text-decoration: none; }

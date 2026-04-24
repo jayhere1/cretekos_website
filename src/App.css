@@ -9,8 +9,6 @@
   text-align: center;
   font-weight: 500;
   font-family: 'Spectral', serif;
-  position: sticky;
-  top: 0;
   z-index: 101;
 }
 .du-announce .mark { color: var(--saffron); }

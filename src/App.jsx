@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -13,6 +14,7 @@ import './App.css'
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="du-announce">
         <span className="mark">&#9670;</span>&nbsp; Harvest 2025 is bottling &middot; Founding 400 shipped in February &nbsp;<span className="mark">&#9670;</span>&nbsp; <span className="deva">&#x0939;&#x093E;&#x0930;&#x094D;&#x0935;&#x0947;&#x0938;&#x094D;&#x091F; &#x0968;&#x0966;&#x0968;&#x096B;</span>
       </div>
