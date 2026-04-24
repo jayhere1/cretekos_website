@@ -1,0 +1,22 @@
+.du-band {
+  background: var(--greek-blue-deep);
+  color: var(--cream);
+  padding: 20px 0;
+  overflow: hidden;
+}
+.du-band-inner {
+  display: flex; gap: 36px; white-space: nowrap;
+  animation: duScroll 60s linear infinite;
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 20px;
+}
+.du-band-inner > * { display: inline-flex; align-items: center; gap: 36px; }
+.du-band-inner span.deva {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-style: normal;
+  color: var(--saffron);
+  font-size: 22px;
+}
+.du-band-inner .mark { color: var(--saffron); }
+@keyframes duScroll { to { transform: translateX(-50%); } }

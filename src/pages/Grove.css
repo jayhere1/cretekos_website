@@ -1,0 +1,51 @@
+/* ═════ GROVE PAGE ═════ */
+.g-story { padding: 120px 36px; max-width: 1200px; margin: 0 auto; }
+.g-split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px; }
+.g-split.rev { grid-template-columns: 1fr 1.1fr; }
+.g-split.rev .g-vis { order: -1; }
+.g-split h2 { margin-bottom: 18px; }
+.g-split h2 em { font-style: italic; font-weight: 400; color: var(--greek-blue); }
+.g-split p { font-size: 16px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 14px; max-width: 54ch; }
+.g-vis {
+  aspect-ratio: 4/5;
+  background-size: cover; background-position: center;
+  border-radius: 280px 280px 16px 16px;
+  position: relative;
+  box-shadow: 0 22px 50px rgba(43,27,15,0.2);
+}
+.g-vis .cap {
+  position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+  padding: 8px 18px; background: var(--cream);
+  border: 1px solid var(--hairline-strong); border-radius: 999px;
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-weight: 600;
+  white-space: nowrap;
+}
+.g-mapstrip {
+  background: var(--cream-dark); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+  padding: 90px 36px;
+}
+.g-mapstrip-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.3fr; gap: 70px; align-items: center; }
+.g-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.g-stat { padding: 20px 22px; background: var(--cream); border: 1px solid var(--hairline); border-radius: 12px; }
+.g-stat .val { font-family: 'Spectral', serif; font-weight: 400; font-size: 38px; color: var(--greek-blue); letter-spacing: -1px; margin-bottom: 2px; }
+.g-stat .val em { font-style: italic; color: var(--saffron-deep); }
+.g-stat .lbl { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.g-map { aspect-ratio: 1.4 / 1; background: var(--cream); border: 1px solid var(--hairline-strong); border-radius: 16px; position: relative; overflow: hidden; }
+
+.g-family { padding: 120px 36px; max-width: 1200px; margin: 0 auto; text-align: center; }
+.g-family h2 em { color: var(--saffron-deep); font-style: italic; font-weight: 400; }
+.g-family-grid { margin-top: 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.g-person { text-align: center; }
+.g-person .port {
+  aspect-ratio: 3/4; border-radius: 140px 140px 12px 12px;
+  background: linear-gradient(160deg, var(--greek-blue), var(--saffron));
+  margin-bottom: 18px; position: relative; overflow: hidden;
+}
+.g-person .port::after { display: none; }
+.g-person .name { font-family: 'Spectral', serif; font-weight: 400; font-size: 22px; font-style: italic; margin-bottom: 2px; }
+.g-person .role { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+@media (max-width: 960px) {
+  .g-split, .g-split.rev, .g-mapstrip-inner { grid-template-columns: 1fr; gap: 40px; }
+  .g-family-grid { grid-template-columns: 1fr 1fr; }
+}

@@ -1,16 +1,17 @@
-/* ═══════════════════════════════════════════
-   CRETEKOS — Shared App Styles
-   ═══════════════════════════════════════════ */
-
-/* Section label (used across pages) */
-.section-label {
-  font-size: 11px; letter-spacing: 6px; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 32px;
-  display: flex; align-items: center; justify-content: center; gap: 16px;
+/* ═════ ANNOUNCEMENT BAR ═════ */
+.du-announce {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 10px 24px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Spectral', serif;
+  position: sticky;
+  top: 0;
+  z-index: 101;
 }
-.section-label::before,
-.section-label::after {
-  content: '';
-  width: 24px; height: 1px;
-  background: rgba(var(--gold-rgb), 0.35);
-}
+.du-announce .mark { color: var(--saffron); }
+.du-announce .deva { opacity: 0.7; }

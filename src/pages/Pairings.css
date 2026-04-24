@@ -1,0 +1,49 @@
+/* ═════ PAIRINGS PAGE ═════ */
+.p-filter {
+  padding: 24px 36px; background: var(--cream);
+  border-bottom: 1px solid var(--hairline);
+  display: flex; justify-content: center; gap: 10px;
+}
+.p-filter button {
+  padding: 9px 18px; border-radius: 999px;
+  background: transparent; border: 1px solid var(--hairline-strong);
+  font-family: 'Spectral', serif; font-size: 13px; letter-spacing: 0.3px; color: var(--ink-soft);
+  cursor: pointer; font-weight: 500;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.p-filter button.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.p-grid { padding: 80px 36px; max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+.p-card {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  background: var(--cream); border: 1px solid var(--hairline); border-radius: 16px; overflow: hidden;
+  transition: transform 0.2s;
+}
+.p-card:hover { transform: translateY(-3px); }
+.p-card .media { background-size: cover; background-position: center; min-height: 360px; position: relative; }
+.p-card .media .chip {
+  position: absolute; top: 18px; left: 18px;
+  padding: 6px 13px; background: var(--cream); border-radius: 999px;
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;
+  color: var(--greek-blue-deep);
+  z-index: 2;
+}
+.p-card.i .media .chip { color: var(--saffron-deep); }
+.p-card.b .media .chip { color: var(--leaf); }
+.p-card .body { padding: 30px 32px; display: flex; flex-direction: column; }
+.p-card .cuisine { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; font-weight: 600; }
+.p-card h3 { font-family: 'Spectral', serif; font-weight: 400; font-size: 26px; letter-spacing: -0.3px; margin-bottom: 6px; }
+.p-card h3 em { font-style: italic; }
+.p-card .local { font-size: 15px; margin-bottom: 14px; }
+.p-card .local.gr { font-family: 'GFS Neohellenic', serif; color: var(--greek-blue); font-style: italic; }
+.p-card .local.dv { font-family: 'Tiro Devanagari Sanskrit', serif; color: var(--saffron-deep); }
+.p-card .local.br { color: var(--leaf); font-family: 'GFS Neohellenic', serif; font-style: italic; }
+.p-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; margin: 0 0 14px; }
+.p-card .notes { margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--hairline-strong); }
+.p-card .notes .lbl { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+.p-card .notes .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.p-card .notes .tag { padding: 4px 10px; border: 1px solid var(--hairline-strong); border-radius: 999px; font-size: 11px; color: var(--ink-soft); font-style: italic; }
+
+@media (max-width: 960px) {
+  .p-grid { grid-template-columns: 1fr; }
+  .p-card { grid-template-columns: 1fr; }
+}
