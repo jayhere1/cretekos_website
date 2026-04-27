@@ -3,23 +3,29 @@
 /* Hero */
 .h-hero {
   position: relative;
-  padding: 60px 36px 90px;
+  padding: 24px 36px 36px;
+  min-height: calc(100svh - 86px);
+  display: flex; align-items: center;
   overflow: hidden;
   border-bottom: 1px solid var(--hairline);
+  box-sizing: border-box;
 }
 .h-hero-grid {
+  width: 100%;
   max-width: 1360px; margin: 0 auto;
   display: grid; grid-template-columns: 1.05fr 0.95fr;
-  gap: 70px; align-items: center;
-  padding-top: 30px;
+  gap: 60px; align-items: center;
+  padding-top: 0;
 }
-.h-hero h1 { color: var(--ink); margin-bottom: 28px; }
+.h-hero h1 { color: var(--ink); margin-bottom: 18px; }
 .h-hero .amp { color: var(--leaf); font-style: normal; padding: 0 0.08em; font-weight: 300; }
-.h-hero .hero-sub { font-size: 19px; color: var(--muted); max-width: 520px; margin-bottom: 14px; line-height: 1.55; font-weight: 300; }
-.h-hero .hero-sub-deva { color: var(--saffron-deep); font-size: 18px; max-width: 520px; line-height: 1.55; margin-bottom: 40px; }
+.h-hero .hero-sub { font-size: 17px; color: var(--muted); max-width: 520px; margin-bottom: 10px; line-height: 1.5; font-weight: 300; }
+.h-hero .hero-sub-deva { color: var(--saffron-deep); font-size: 16px; max-width: 520px; line-height: 1.5; margin-bottom: 28px; }
 .h-hero-ctas { display: flex; gap: 14px; }
 .h-hero-visual {
-  position: relative; aspect-ratio: 1 / 1.1; width: 100%; min-height: 400px;
+  position: relative; width: 100%; max-width: 540px;
+  aspect-ratio: 1 / 1.05; min-height: 380px;
+  margin-left: auto;
 }
 .h-hero-img-main {
   position: absolute; inset: 0;
@@ -117,7 +123,59 @@
 }
 .h-taste-note .lbl { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
 .h-taste-note .val { font-family: 'Spectral', serif; font-style: italic; font-size: 17px; color: var(--greek-blue); }
-.h-taste-wheel { position: relative; aspect-ratio: 1; max-width: 600px; margin: 0 auto; background: var(--cream); border: 1px solid var(--hairline); padding: 8px; }
+.h-taste-wheel { position: relative; max-width: 520px; margin: 0 auto; }
+
+/* Taste card (simple) */
+.taste-card {
+  background: var(--cream);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 14px;
+  padding: 28px 30px;
+  box-shadow: 0 6px 24px rgba(43,27,15,0.06);
+}
+.taste-card-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 8px;
+}
+.taste-card-eyebrow {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+.taste-card-meta {
+  font-family: 'Spectral', serif; font-style: italic; font-size: 13px;
+  color: var(--saffron-deep);
+}
+.taste-list { list-style: none; padding: 0; margin: 0; }
+.taste-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.taste-row:last-child { border-bottom: 0; }
+.taste-row-text { display: flex; flex-direction: column; gap: 2px; }
+.taste-lbl {
+  font-family: 'Spectral', serif; font-size: 22px; font-weight: 500;
+  color: var(--ink); letter-spacing: -0.2px;
+}
+.taste-desc {
+  font-size: 13px; color: var(--ink-soft); font-style: italic;
+}
+.taste-dots { display: flex; gap: 6px; }
+.taste-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  transition: background 0.2s;
+}
+.taste-dot.on { border-color: transparent; }
+.taste-card-foot {
+  padding-top: 14px; margin-top: 8px;
+  border-top: 1px solid var(--hairline);
+  font-family: 'Spectral', serif; font-size: 13px; color: var(--muted);
+  text-align: center;
+}
 
 /* Pairings teaser */
 .h-pair {

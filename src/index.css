@@ -59,9 +59,9 @@ p { margin: 0 0 1em; }
 .du-h1 {
   font-family: 'Spectral', serif;
   font-weight: 300;
-  font-size: clamp(48px, 7.5vw, 104px);
-  line-height: 0.98;
-  letter-spacing: -1.5px;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -1px;
 }
 .du-h2 {
   font-family: 'Spectral', serif;
@@ -156,15 +156,10 @@ p { margin: 0 0 1em; }
 /* ═════ HAIRLINE ═════ */
 .du-hairline { height: 1px; background: var(--hairline); margin: 0; }
 
-/* ═════ ZIGZAG BORDERS ═════ */
+/* ═════ EDITORIAL DIVIDER ═════ */
 .du-zigzag-top, .du-zigzag-bottom {
-  height: 14px;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 L5 0 L10 10 L15 0 L20 10 L25 0 L30 10 L35 0 L40 10 Z' fill='%23E07A2C' fill-opacity='0.25'/%3E%3C/svg%3E");
-  background-size: 40px 10px;
-  background-repeat: repeat-x;
-}
-.du-zigzag-bottom {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L5 10 L10 0 L15 10 L20 0 L25 10 L30 0 L35 10 L40 0 Z' fill='%23E07A2C' fill-opacity='0.25'/%3E%3C/svg%3E");
+  height: 1px;
+  background: var(--hairline);
 }
 
 /* ═════ PAGE HEADER (subpages) ═════ */
